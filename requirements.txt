@@ -1,0 +1,10 @@
+fastapi
+uvicorn
+spacy
+scikit-learn
+joblib
+sentence-transformers
+transformers
+datasets
+elasticsearch
+python-dotenv
