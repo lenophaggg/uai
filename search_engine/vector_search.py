@@ -159,6 +159,10 @@ def vector_search_ner(
             ]
             doc_text = " ".join(doc_text_parts)
 
+            # Фильтруем кандидатов на основе найденных сущностей NER
+            if filters and not passes_ner_filters(src, filters):
+                continue
+
             d_vec = model.encode(doc_text)
             sim = float((q_vec @ d_vec) / (np.linalg.norm(q_vec) * np.linalg.norm(d_vec) + 1e-8))
 
